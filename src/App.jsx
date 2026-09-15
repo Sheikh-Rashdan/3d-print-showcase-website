@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <header>
-        <p>Website Name 3D Models</p>
+        <p>Yash's 3D Models</p>
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
       <GallerySection folders={folders} selectedFolder={selectedFolder} />
