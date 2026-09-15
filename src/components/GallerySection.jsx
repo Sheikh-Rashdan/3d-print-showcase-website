@@ -1,11 +1,14 @@
 import "./GallerySection.css";
 
 function GallerySection({ folders, selectedFolder }) {
-    if (!folders.size || selectedFolder === "All") {
-        return <></>;
+    if (!folders.size || selectedFolder === "") {
+        return <section className="infoText">Select a Category</section>;
     }
 
-    const files = folders.get(selectedFolder).files;
+    const files = folders.get(selectedFolder)?.files;
+    if (files === null || files === undefined) {
+        return <section className="infoText">Loading images...</section>;
+    }
 
     return (
         <section className="gallerySection">
