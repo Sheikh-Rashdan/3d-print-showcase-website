@@ -1,0 +1,36 @@
+:root {
+  --bg1: rgb(36 22 22);
+  --bg2: rgb(57 42 42);
+  --text: rgb(219, 219, 219);
+}
+
+* {
+  margin: 0;
+  color: var(--text);
+  font-family: "Lexend Deca";
+}
+
+::selection {
+  background-color: var(--bg2);
+}
+
+body {
+  min-height: 100svh;
+  background: linear-gradient(var(--bg1), var(--bg2)) no-repeat fixed;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(from white r g b / 0.03);
+
+  font-size: 3rem;
+  padding: 2rem;
+  border-bottom: 3px solid var(--bg2);
+  backdrop-filter: blur(5px);
+}
