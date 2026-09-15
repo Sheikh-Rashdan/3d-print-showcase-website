@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css'
 import CategorySection from './components/CategorySection';
+import GallerySection from './components/GallerySection';
 
 function App() {
   const [folders, setFolders] = useState(new Map());
@@ -13,6 +14,7 @@ function App() {
         <p>Website Name 3D Models</p>
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
+      <GallerySection folders={folders} selectedFolder={selectedFolder} />
     </>
   )
 }
