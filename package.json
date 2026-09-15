@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "server": "node server.js",
+    "dev": "vite --config frontend/vite.config.js",
+    "server": "node backend/server.js",
     "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
-    "build": "vite build",
+    "build": "vite --config frontend/vite.config.js",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview --config frontend/vite.config.js"
   },
   "dependencies": {
     "concurrently": "^9.2.1",
