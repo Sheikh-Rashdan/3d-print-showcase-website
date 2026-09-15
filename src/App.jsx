@@ -5,8 +5,20 @@ import GallerySection from './components/GallerySection';
 
 function App() {
   const [folders, setFolders] = useState(new Map());
-  const [selectedFolder, setSelectedFolder] = useState("All");
+  const [selectedFolder, setSelectedFolder] = useState("");
   useEffect(() => { getFolders(setFolders); }, []);
+  useEffect(() => {
+    const folder = folders.get(selectedFolder);
+    if (!folder || folder.files !== null) return;
+
+    getFilesUsingId(folder.id, "createdTime desc").then((files) => {
+      setFolders((currentFolders) => {
+        const nextFolders = new Map(currentFolders);
+        nextFolders.set(selectedFolder, { ...folder, files });
+        return nextFolders;
+      });
+    });
+  }, [folders, selectedFolder]);
 
   return (
     <>
@@ -23,25 +35,32 @@ async function getFolders(setFolders) {
   const foldersJson = await getFilesUsingId("1e6KT-ONRiz90G_hqhdgOnLyhV80Phqf_");
 
   const newFolders = new Map();
-  newFolders.set("All", { id: "all", files: {} });
 
-  const folderData = await Promise.all(
-    foldersJson.map(async (file) => [
-      file.name,
-      { id: file.id, files: await getFilesUsingId(file.id, "createdTime desc") },
-    ])
-  );
+  const folderData = foldersJson.map((file) => [
+    file.name,
+    { id: file.id, files: null },
+  ]);
 
   folderData.forEach(([name, data]) => newFolders.set(name, data));
 
   setFolders(newFolders);
 }
 
+const filesRequestCache = new Map();
+
 async function getFilesUsingId(id, orderBy = "name") {
+  const cacheKey = `${id}:${orderBy}`;
+  if (filesRequestCache.has(cacheKey)) return filesRequestCache.get(cacheKey);
+
   const url = `https://www.googleapis.com/drive/v3/files?key=AIzaSyCVDk734Nt4kQpEAO7vbsdwu73qQtA1iXw&q=%27${id}%27+in+parents&fields=files(id,name)&orderBy=${orderBy}`;
-  const response = await fetch(url);
-  const data = await response.json();
-  return data.files;
+  const request = fetch(url).then(async (response) => {
+    if (!response.ok) throw new Error(`Google Drive request failed: ${response.status}`);
+    const data = await response.json();
+    return data.files;
+  });
+
+  filesRequestCache.set(cacheKey, request);
+  return request;
 }
 
 export default App
