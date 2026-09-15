@@ -6,7 +6,7 @@ function CategorySection({ folders, selectedFolder, setSelectedFolder }) {
             {
                 !folders.size ?
                     <p className="loadingText">Loading...</p> :
-                    Array.from(folders).map(([name, data], i) => (
+                    Array.from(folders).map(([name]) => (
                         <CategoryCard key={name} name={name} selected={name == selectedFolder} setSelectedFolder={setSelectedFolder} />
                     ))
             }
