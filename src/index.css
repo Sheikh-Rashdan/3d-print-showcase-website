@@ -7,7 +7,7 @@
 * {
   margin: 0;
   color: var(--text);
-  font-family: "Lexend Deca";
+  font-family: "Lexend Deca", Arial;
   box-sizing: border-box;
 }
 
