@@ -5,7 +5,7 @@ import CategorySection from './components/CategorySection';
 function App() {
   const [folders, setFolders] = useState(new Map());
   const [selectedFolder, setSelectedFolder] = useState("All");
-  useEffect(() => { getFolders(setFolders) }, []);
+  useEffect(() => { getFolders(setFolders); }, []);
 
   return (
     <>
@@ -36,7 +36,7 @@ async function getFolders(setFolders) {
 }
 
 async function getFilesUsingId(id, orderBy = "name") {
-  const url = `https://www.googleapis.com/drive/v3/files?key=AIzaSyCVDk734Nt4kQpEAO7vbsdwu73qQtA1iXw&q=%27${id}%27+in+parents&fields=files(id,name,mimeType)&orderBy=${orderBy}`;
+  const url = `https://www.googleapis.com/drive/v3/files?key=AIzaSyCVDk734Nt4kQpEAO7vbsdwu73qQtA1iXw&q=%27${id}%27+in+parents&fields=files(id,name)&orderBy=${orderBy}`;
   const response = await fetch(url);
   const data = await response.json();
   return data.files;
