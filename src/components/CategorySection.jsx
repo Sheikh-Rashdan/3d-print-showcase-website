@@ -3,9 +3,13 @@ import "./CategorySection.css";
 function CategorySection({ folders, selectedFolder, setSelectedFolder }) {
     return (
         <section className="categorySection">
-            {Array.from(folders).map(([name, data], i) => (
-                <CategoryCard key={name} name={name} selected={name == selectedFolder} setSelectedFolder={setSelectedFolder} />
-            ))}
+            {
+                !folders.size ?
+                    <p className="loadingText">Loading...</p> :
+                    Array.from(folders).map(([name, data], i) => (
+                        <CategoryCard key={name} name={name} selected={name == selectedFolder} setSelectedFolder={setSelectedFolder} />
+                    ))
+            }
         </section>
     );
 }

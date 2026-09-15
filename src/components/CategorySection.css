@@ -38,3 +38,8 @@
     color: var(--bg2);
     font-weight: 600;
 }
+
+.loadingText {
+    text-align: center;
+    padding: 1rem;
+}
