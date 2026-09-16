@@ -69,6 +69,6 @@ function sendDriveError(response, error) {
     response.status(502).json({ error: "Unable to retrieve Google Drive data" });
 }
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`API server listening on http://localhost:${port}`);
 });
