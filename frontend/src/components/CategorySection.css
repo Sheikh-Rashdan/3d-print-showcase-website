@@ -36,6 +36,12 @@
     }
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .categoryCard:hover {
+        background-color: var(--bg2);
+    }
+}
+
 .categoryCard.selected {
     background-color: white;
     color: var(--bg2);
