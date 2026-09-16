@@ -37,6 +37,7 @@
         line-clamp: 2;
         -webkit-line-clamp: 2;
 
+        background-color: var(--bg2);
         padding: 0.25rem 0.5rem;
         border-radius: 8px;
         font-size: 1.2rem;
