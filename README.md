@@ -1,16 +1,103 @@
-# React + Vite
+# Creatory3D Models
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A 3D model showcase and storefront built for a small business selling printable designs. The app displays model categories and previews images pulled dynamically from Google Drive, making it easy to manage an expanding catalog without updating the frontend manually.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Creatory3D Models is a lightweight full-stack web app that combines:
 
-## React Compiler
+- a React + Vite frontend for browsing categories and gallery items
+- an Express backend that queries Google Drive for folders and files
+- a clean, responsive layout built for product showcasing and customer contact
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is designed as a polished portfolio and business showcase for a 3D printing brand.
 
-## Expanding the Oxlint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Category-based navigation for 3D model collections
+- Dynamic image gallery loaded from Google Drive
+- Clean, mobile-friendly storefront layout
+- WhatsApp contact button for quick customer inquiries
+- Express API layer for secure and centralized Drive access
+- Fast local development workflow with concurrent frontend/backend startup
+
+## Tech Stack
+
+- React 19
+- Vite
+- Express
+- Google Drive API
+- CSS modules / component styling
+
+## Project Structure
+
+```text
+3d-print-showcase/
+├── backend/
+│   └── server.js
+├── frontend/
+│   ├── index.html
+│   ├── vite.config.js
+│   └── src/
+│       ├── App.jsx
+│       ├── App.css
+│       ├── main.jsx
+│       ├── index.css
+│       └── components/
+├── package.json
+├── README.md
+└── .gitignore
+```
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure environment variables
+
+Create a `.env` file inside the `backend` folder with the following values:
+
+```env
+PORT=3001
+GOOGLE_DRIVE_API_KEY=your_google_drive_api_key
+GOOGLE_DRIVE_ROOT_FOLDER_ID=your_google_drive_root_folder_id
+```
+
+Also add a frontend environment file if needed:
+
+```env
+VITE_API_URL=http://localhost:3001
+```
+
+### 3. Run the app
+
+```bash
+npm run dev:full
+```
+
+This starts both:
+
+- the backend API on port 3001
+- the Vite frontend for local development
+
+## Available Scripts
+
+```bash
+npm run dev
+npm run server
+npm run dev:full
+npm run build
+npm run preview
+```
+
+## Usage
+
+The app loads model folders from a Google Drive folder and displays images for each category. This makes it easy to manage the product catalog by organizing folders and images in Drive without touching the application code.
+
+## License
+
+This project is for personal and portfolio showcase use. Feel free to adapt it for your own brand or business.
