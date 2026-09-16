@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import { fileURLToPath } from "node:url";
 
 dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) });
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3001;
 const driveApiKey = process.env.GOOGLE_DRIVE_API_KEY;
 const rootFolderId = process.env.GOOGLE_DRIVE_ROOT_FOLDER_ID;
