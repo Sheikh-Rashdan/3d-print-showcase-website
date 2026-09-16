@@ -25,7 +25,7 @@
 
 html {
   min-height: 100%;
-  background-color: var(--bg2);
+  background-color: var(--bg1);
 }
 
 body {
@@ -35,6 +35,12 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -66,6 +72,45 @@ header {
 
   .trailing {
     width: 5rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: auto;
+  gap: 1rem;
+
+  padding: 3rem;
+  background-color: var(--bg1);
+  border-top: 3px solid var(--text);
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .infoText {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1.5rem;
+
+    div {
+      gap: 0.25rem;
+    }
+
+    .infoText {
+      font-size: 0.8rem;
+    }
+
+    .infoIcon {
+      width: 1rem;
+    }
   }
 }
 

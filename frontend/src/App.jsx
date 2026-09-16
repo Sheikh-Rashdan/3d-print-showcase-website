@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
+import { Envelope, Phone } from '@boxicons/react';
 import CategorySection from './components/CategorySection';
 import GallerySection from './components/GallerySection';
 
@@ -31,6 +32,16 @@ function App() {
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
       <GallerySection folders={folders} selectedFolder={selectedFolder} />
+      <footer>
+        <div>
+          <Envelope pack="filled" fill="currentColor" className="infoIcon" />
+          <p className="infoText">creatory3dprints@gmail.com</p>
+        </div>
+        <div>
+          <Phone pack="filled" fill="currentColor" className="infoIcon" />
+          <p className="infoText">+91 9229333944</p>
+        </div>
+      </footer>
     </>
   )
 }
