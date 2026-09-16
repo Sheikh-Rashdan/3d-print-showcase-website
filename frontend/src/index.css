@@ -77,7 +77,7 @@ header {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: auto;
   gap: 1rem;
 
@@ -92,12 +92,17 @@ footer {
     gap: 0.5rem;
   }
 
+  div[data-clickable] {
+    cursor: pointer;
+  }
+
+
   .infoText {
     font-size: 1.2rem;
   }
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 
     padding: 1.5rem;
     padding-bottom: 5rem;

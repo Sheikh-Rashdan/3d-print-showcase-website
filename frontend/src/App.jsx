@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { Envelope, Phone, Message } from '@boxicons/react';
+import { Envelope, Phone, Message, At } from '@boxicons/react';
 import CategorySection from './components/CategorySection';
 import GallerySection from './components/GallerySection';
 
@@ -44,7 +44,11 @@ function App() {
           <Phone pack="filled" fill="currentColor" className="infoIcon" />
           <p className="infoText">+91 9229333944</p>
         </div>
-        <div className="span2">
+        <div onClick={openInstagram} data-clickable>
+          <At pack="filled" fill="currentColor" className="infoIcon" />
+          <p className="infoText">creatory3d</p>
+        </div>
+        <div>
           <Envelope pack="filled" fill="currentColor" className="infoIcon" />
           <p className="infoText">creatory3dprints@gmail.com</p>
         </div>
@@ -55,6 +59,10 @@ function App() {
 
 function openWhatsapp() {
   setTimeout(() => window.open("https://wa.me/919229333944?text=Hi%21%20I%27m%20Interested%20in%20purchasing%20a%203D%20Model"), 300);
+}
+
+function openInstagram() {
+  window.open("https://www.instagram.com/creatory3d");
 }
 
 async function getFolders(setFolders) {
