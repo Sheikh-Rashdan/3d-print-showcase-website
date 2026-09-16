@@ -21,7 +21,7 @@ function ImageCard({ file }) {
     const cleanName = file.name.substring(0, file.name.lastIndexOf("."));
     return (
         <div className="imageCard">
-            <img
+            <img onClick={() => { window.open(`https://lh3.googleusercontent.com/d/${file.id}`); }}
                 src={`https://drive.google.com/thumbnail?id=${file.id}&sz=w300`}
                 alt={file.name}
                 loading="lazy"
