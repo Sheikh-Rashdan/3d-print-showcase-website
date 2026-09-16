@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { Envelope, Phone } from '@boxicons/react';
+import { Envelope, Phone, Message } from '@boxicons/react';
 import CategorySection from './components/CategorySection';
 import GallerySection from './components/GallerySection';
 
@@ -27,7 +27,10 @@ function App() {
         <div className="leading"></div>
         <p className="titleText">Creatory3D Models</p>
         <div className="trailing">
-          <button onClick={() => { window.open("https://wa.me/919229333944?text=Hi%21%20I%27m%20Interested%20in%20purchasing%20a%203D%20Model"); }}>Contact</button>
+          <button onClick={openWhatsapp}>
+            <Message pack="filled" className="buttonIcon" />
+            Contact
+          </button>
         </div>
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
@@ -44,6 +47,10 @@ function App() {
       </footer>
     </>
   )
+}
+
+function openWhatsapp() {
+  setTimeout(() => window.open("https://wa.me/919229333944?text=Hi%21%20I%27m%20Interested%20in%20purchasing%20a%203D%20Model"), 300);
 }
 
 async function getFolders(setFolders) {
