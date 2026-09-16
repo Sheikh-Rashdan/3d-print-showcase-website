@@ -99,6 +99,7 @@ footer {
 
   @media screen and (max-width: 768px) {
     padding: 1.5rem;
+    padding-bottom: 5rem;
 
     div {
       gap: 0.25rem;
