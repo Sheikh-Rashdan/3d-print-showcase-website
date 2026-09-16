@@ -37,12 +37,16 @@ function App() {
       <GallerySection folders={folders} selectedFolder={selectedFolder} />
       <footer>
         <div>
-          <Envelope pack="filled" fill="currentColor" className="infoIcon" />
-          <p className="infoText">creatory3dprints@gmail.com</p>
+          <Phone pack="filled" fill="currentColor" className="infoIcon" />
+          <p className="infoText">+91 9229333944</p>
         </div>
         <div>
           <Phone pack="filled" fill="currentColor" className="infoIcon" />
           <p className="infoText">+91 9229333944</p>
+        </div>
+        <div className="span2">
+          <Envelope pack="filled" fill="currentColor" className="infoIcon" />
+          <p className="infoText">creatory3dprints@gmail.com</p>
         </div>
       </footer>
     </>
