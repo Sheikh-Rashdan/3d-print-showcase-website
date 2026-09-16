@@ -115,6 +115,11 @@ footer {
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+
   background-color: var(--text);
   color: var(--bg1);
   font-weight: bold;
@@ -127,6 +132,11 @@ button {
 
   cursor: pointer;
   transition: transform 200ms ease-out;
+
+  .buttonIcon {
+    width: 1rem;
+    fill: var(--bg1);
+  }
 }
 
 @media (hover:hover) and (pointer:fine) {
