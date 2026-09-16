@@ -20,8 +20,11 @@ function GallerySection({ folders, selectedFolder }) {
 function ImageCard({ file }) {
     const cleanName = file.name.substring(0, file.name.lastIndexOf("."));
     return (
-        <div className="imageCard">
-            <img onClick={() => { window.open(`https://lh3.googleusercontent.com/d/${file.id}`); }}
+        <div
+            className="imageCard"
+            onClick={() => { window.open(`https://lh3.googleusercontent.com/d/${file.id}`); }}
+        >
+            <img
                 src={`https://drive.google.com/thumbnail?id=${file.id}&sz=w300`}
                 alt={file.name}
                 loading="lazy"
