@@ -7,7 +7,7 @@
     "dev": "vite --config frontend/vite.config.js",
     "server": "node backend/server.js",
     "dev:full": "concurrently \"npm run server\" \"npm run dev -- --host\"",
-    "build": "vite --config frontend/vite.config.js",
+    "build": "vite build --config frontend/vite.config.js",
     "lint": "oxlint",
     "preview": "vite preview --config frontend/vite.config.js"
   },
