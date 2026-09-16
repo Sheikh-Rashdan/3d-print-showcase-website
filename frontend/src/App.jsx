@@ -23,7 +23,11 @@ function App() {
   return (
     <>
       <header>
-        <p>Creatory3D Models</p>
+        <div className="leading"></div>
+        <p className="titleText">Creatory3D Models</p>
+        <div className="trailing">
+          <button>Contact</button>
+        </div>
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
       <GallerySection folders={folders} selectedFolder={selectedFolder} />
