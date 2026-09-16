@@ -24,7 +24,9 @@ function App() {
   return (
     <>
       <header>
-        <div className="leading"></div>
+        <div className="leading">
+          <img src="assets/logo.png" />
+        </div>
         <p className="titleText">Creatory3D Models</p>
         <div className="trailing">
           <button onClick={openWhatsapp}>
