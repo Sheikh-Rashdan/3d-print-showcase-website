@@ -54,7 +54,9 @@ function openWhatsapp() {
 }
 
 async function getFolders(setFolders) {
-  const response = await fetch("/api/folders");
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/api/folders`
+  );
   if (!response.ok) throw new Error(`Folder request failed: ${response.status}`);
   const foldersJson = await response.json();
 
@@ -71,7 +73,9 @@ async function getFolders(setFolders) {
 }
 
 async function getFilesUsingId(id) {
-  const response = await fetch(`/api/folders/${encodeURIComponent(id)}/files`);
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/api/folders/${encodeURIComponent(id)}/files`
+  );
   if (!response.ok) throw new Error(`File request failed: ${response.status}`);
   return response.json();
 }
