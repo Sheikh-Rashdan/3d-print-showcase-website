@@ -3,6 +3,7 @@ import './App.css'
 import { Envelope, Phone, Message, At } from '@boxicons/react';
 import CategorySection from './components/CategorySection';
 import GallerySection from './components/GallerySection';
+import logo from '../assets/logo.png';
 
 function App() {
   const [folders, setFolders] = useState(new Map());
@@ -25,7 +26,7 @@ function App() {
     <>
       <header>
         <div className="leading">
-          <img src="assets/logo.png" />
+          <img src={logo} alt="Creatory3D Models logo" />
         </div>
         <p className="titleText">Creatory3D Models</p>
         <div className="trailing">
