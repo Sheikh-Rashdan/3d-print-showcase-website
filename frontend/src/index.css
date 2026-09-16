@@ -9,6 +9,8 @@
   color: var(--text);
   font-family: "Lexend Deca", Arial;
   box-sizing: border-box;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -52,4 +54,31 @@ header {
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
   }
+
+}
+
+button {
+  background-color: var(--text);
+  color: var(--bg1);
+  font-weight: bold;
+
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 12px;
+  corner-shape: squircle;
+  box-shadow: 0 3px 0 rgba(from var(--text) r g b / 0.5);
+
+  cursor: pointer;
+  transition: transform 200ms ease-out;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  button:hover {
+    transform: scale(1.1);
+  }
+}
+
+button:active {
+  margin-top: 3px;
+  box-shadow: none;
 }
