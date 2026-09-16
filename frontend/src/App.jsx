@@ -26,7 +26,7 @@ function App() {
         <div className="leading"></div>
         <p className="titleText">Creatory3D Models</p>
         <div className="trailing">
-          <button>Contact</button>
+          <button onClick={() => { window.open("https://wa.me/919229333944?text=Hi%21%20I%27m%20Interested%20in%20purchasing%20a%203D%20Model"); }}>Contact</button>
         </div>
       </header>
       <CategorySection folders={folders} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
