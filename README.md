@@ -21,6 +21,13 @@ This project is designed as a polished portfolio and business showcase for a 3D 
 - Express API layer for secure and centralized Drive access
 - Fast local development workflow with concurrent frontend/backend startup
 
+## Gallery
+
+<p align="center">
+  <img width="1200" height="675" alt="3d-print-showcase" src="https://github.com/user-attachments/assets/91d92c82-ef4e-43c3-bfec-148e326012f1" /><br />
+  Desktop View
+</p>
+
 ## Tech Stack
 
 - React 19
