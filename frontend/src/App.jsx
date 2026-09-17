@@ -45,7 +45,7 @@ function App() {
         </div>
         <div>
           <Phone pack="filled" fill="currentColor" className="infoIcon" />
-          <p className="infoText">+91 9229333944</p>
+          <p className="infoText">+91 9508456899</p>
         </div>
         <div onClick={openInstagram} data-clickable>
           <At pack="filled" fill="currentColor" className="infoIcon" />
