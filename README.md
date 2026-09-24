@@ -2,6 +2,10 @@
 
 A 3D model showcase and storefront built for a small business selling printable designs. The app displays model categories and previews images pulled dynamically from Google Drive, making it easy to manage an expanding catalog without updating the frontend manually.
 
+## Deployed Webapp
+
+https://creatory-3d.netlify.app
+
 ## Overview
 
 Creatory3D Models is a lightweight full-stack web app that combines:
